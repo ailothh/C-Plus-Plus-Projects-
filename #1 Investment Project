@@ -1,1 +1,32 @@
+#include <iostream>
 
+using namespace std;
+
+int main()
+{
+    //initial variables
+    double purchasePrice,salePrice;
+    int numOfShares;
+    //constant
+    double feePercent = .015;
+    //ask user for inputs
+    cout << "\nEnter the buying price of each share:";
+    cin >> purchasePrice;
+    cout << "\nEnter the selling price of each share:";
+    cin >> salePrice;
+    cout << "\nEnter the number of shares sold:";
+    cin >> numOfShares;
+    //calculations
+    double saleFee = (numOfShares * salePrice) * feePercent;
+    double amtReceived = (numOfShares * salePrice) - saleFee;
+    double purchaseFee = (numOfShares * purchasePrice) * feePercent;
+    double amtInvested = (numOfShares * purchasePrice) + purchaseFee;
+    double profit = amtReceived - amtInvested;
+    double totalFees = saleFee + purchaseFee;
+    //output of calculations 
+    cout << "\nTotal amount invested: $ " << amtInvested;
+    cout << "\nTotal amount received: $ " << amtReceived;
+    cout << "\nTotal service charges: $ "  << totalFees;
+    cout << "\nAmount gained or lost: $ " << profit;
+   
+   return 0;    
